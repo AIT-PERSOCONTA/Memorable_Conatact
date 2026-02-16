@@ -77,7 +77,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row h-screen lg:h-[850px] w-full max-w-7xl mx-auto overflow-hidden lg:rounded-[40px] border transition-all duration-500 ${theme === 'dark' ? 'bg-slate-950 border-slate-800 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.7)]' : 'bg-white border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)]'} min-h-[100dvh] lg:min-h-0`}>
+    <div className={`flex flex-col lg:flex-row h-screen lg:h-[850px] w-full responsive-container overflow-hidden lg:rounded-[40px] border transition-all duration-500 ${theme === 'dark' ? 'bg-slate-950 border-slate-800 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.7)]' : 'bg-white border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)]'} min-h-[100dvh] lg:min-h-0`}>
 
       {/* Sidebar - Desktop */}
       <aside className={`hidden lg:flex w-80 flex-col border-r transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-900 border-slate-800' : 'bg-slate-50 border-slate-200'}`}>
@@ -218,15 +218,15 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
             />
           </div>
           <div className="flex items-center gap-2 lg:gap-6">
-            <button className={`p-2.5 lg:p-4 rounded-xl border relative ${theme === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-400' : 'bg-white border-slate-200 text-slate-500'}`}>
-              <Bell className="w-4 h-4" />
-              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-indigo-500 rounded-full border-2 border-white dark:border-slate-950" />
+            <button className={`p-3 lg:p-4 rounded-xl border relative min-h-[44px] min-w-[44px] flex items-center justify-center ${theme === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-400' : 'bg-white border-slate-200 text-slate-500'}`}>
+              <Bell className="w-5 h-5" />
+              <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-indigo-500 rounded-full border-2 border-white dark:border-slate-950" />
             </button>
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="px-4 lg:px-8 py-2.5 lg:py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-[10px] lg:text-sm font-black shadow-lg transition-all uppercase tracking-widest whitespace-nowrap"
+              className="px-4 lg:px-8 py-3 lg:py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-[10px] lg:text-sm font-black shadow-lg transition-all uppercase tracking-widest whitespace-nowrap min-h-[44px]"
             >
-              <Plus className="w-4 h-4 sm:hidden" />
+              <Plus className="w-5 h-5 sm:hidden" />
               <span className="hidden sm:inline">New Entry</span>
             </button>
           </div>

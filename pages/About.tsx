@@ -11,8 +11,8 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ theme, onBack }) => {
     return (
-        <div className={`min-h-screen pt-32 pb-20 px-6 transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
-            <div className="max-w-7xl mx-auto">
+        <div className={`min-h-screen pt-20 pb-16 px-0 transition-colors duration-300 md:pt-32 md:pb-20 md:px-6 ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
+            <div className="responsive-container lg:max-w-7xl">
                 {/* Navigation Back */}
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
@@ -29,10 +29,10 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className={`mb-32 rounded-[24px] overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ${theme === 'dark'
+                    className={`mb-20 md:mb-32 rounded-[24px] overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ${theme === 'dark'
                         ? 'bg-slate-900 border-slate-800 shadow-2xl'
                         : 'bg-white border-slate-200 shadow-[0px_10px_30px_rgba(0,0,0,0.08)]'
-                        } border`}
+                        } border mx-auto w-full`}
                 >
                     {/* Left Side: Content */}
                     <div className="flex-1 p-6 md:p-12 lg:p-16">

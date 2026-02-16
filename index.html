@@ -1,66 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MemorableContact - Never Forget a Connection</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --glass-bg: rgba(255, 255, 255, 0.7);
-        --glass-border: rgba(0, 0, 0, 0.05);
-        --nav-glow: 0 4px 30px rgba(0, 0, 0, 0.05), 0 0 20px rgba(99, 102, 241, 0.1);
-        --body-bg: #f8fafc;
-        --body-text: #0f172a;
-      }
-      .dark-theme {
-        --glass-bg: rgba(15, 23, 42, 0.6);
-        --glass-border: rgba(255, 255, 255, 0.1);
-        --nav-glow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(99, 102, 241, 0.2);
-        --body-bg: #020617;
-        --body-text: #f8fafc;
-      }
-      body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        margin: 0;
-        background-color: var(--body-bg);
-        color: var(--body-text);
-        overflow-x: hidden;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      .glass {
-        background: var(--glass-bg);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--glass-border);
-      }
-      .nav-glow {
-        box-shadow: var(--nav-glow);
-      }
-      .gradient-text {
-        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      @keyframes pulse-soft {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-        50% { transform: scale(1.02); box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.2); }
-      }
-      .animate-pulse-cta {
-        animation: pulse-soft 3s infinite ease-in-out;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MemorableContact - Never Forget a Connection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/index.css">
   <script type="importmap">
 {
   "imports": {
@@ -75,10 +25,11 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="dark-theme">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body class="dark-theme">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

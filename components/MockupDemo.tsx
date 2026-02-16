@@ -29,12 +29,12 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
   const isWordVisible = (start: number) => displayText.length >= start;
 
   return (
-    <section className={`relative py-32 px-6 overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
+    <section className={`relative py-20 px-0 overflow-hidden transition-colors duration-300 md:py-32 md:px-6 ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
       {/* Subtle Grid Background */}
-      <div className={`absolute inset-0 opacity-[0.03] pointer-events-none ${theme === 'dark' ? 'invert' : ''}`} 
-           style={{ backgroundImage: `radial-gradient(#4f46e5 0.5px, transparent 0.5px)`, backgroundSize: '24px 24px' }} />
-      
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
+      <div className={`absolute inset-0 opacity-[0.03] pointer-events-none ${theme === 'dark' ? 'invert' : ''}`}
+        style={{ backgroundImage: `radial-gradient(#4f46e5 0.5px, transparent 0.5px)`, backgroundSize: '1.5rem 1.5rem' }} />
+
+      <div className="responsive-container flex flex-col items-center gap-12 lg:flex-row lg:gap-24 relative z-10">
         <div className="flex-1 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -47,24 +47,23 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
             <p className={`text-xl mb-12 max-w-lg font-medium transition-colors duration-300 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
               MemorableContact doesn't just store text. It understands the architecture of your connections, extracting vital entities as you speak or type.
             </p>
-            
+
             <div className="flex flex-col gap-5 max-w-md mx-auto lg:mx-0">
               {[
                 { icon: <User className="w-5 h-5" />, label: "Entity Extraction", text: "Names and roles identified instantly via NLP." },
                 { icon: <Navigation className="w-5 h-5" />, label: "Geo-Context", text: "Venue and city metadata attached automatically." },
                 { icon: <Clock className="w-5 h-5" />, label: "Smart Timeline", text: "Every interaction anchored in a searchable graph." }
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`flex items-start gap-4 p-5 rounded-3xl border transition-all ${
-                    theme === 'dark' 
-                      ? 'border-slate-800/50 bg-slate-900/40 hover:border-indigo-500/30' 
+                  className={`flex items-start gap-4 p-5 rounded-3xl border transition-all ${theme === 'dark'
+                      ? 'border-slate-800/50 bg-slate-900/40 hover:border-indigo-500/30'
                       : 'border-slate-200/50 bg-white shadow-sm hover:border-indigo-400'
-                  }`}
+                    }`}
                 >
                   <div className="p-3 rounded-2xl bg-indigo-600/10 text-indigo-500">{item.icon}</div>
                   <div>
@@ -78,8 +77,8 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
         </div>
 
         {/* 3D iPhone Mockup */}
-        <div className="relative w-full max-w-[400px] perspective-2000 py-12">
-          <motion.div 
+        <div className="relative w-full max-w-full md:max-w-[25rem] perspective-2000 py-6 md:py-12">
+          <motion.div
             initial={{ rotateY: 20, rotateX: 5, scale: 0.9, opacity: 0 }}
             whileInView={{ rotateY: -15, rotateX: 5, scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -87,10 +86,9 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
             className="relative mx-auto group"
           >
             {/* Phone Frame - 3D Realistic Style */}
-            <div className={`relative w-[300px] h-[610px] mx-auto rounded-[3.5rem] border-[12px] shadow-[30px_50px_100px_-20px_rgba(0,0,0,0.6)] transition-colors duration-300 flex flex-col overflow-hidden ${
-              theme === 'dark' ? 'border-slate-800 bg-slate-950' : 'border-slate-200 bg-white'
-            }`}>
-              
+            <div className={`relative w-full max-w-[18.75rem] h-[38.125rem] mx-auto rounded-[3.5rem] border-[12px] shadow-[30px_50px_100px_-20px_rgba(0,0,0,0.6)] transition-colors duration-300 flex flex-col overflow-hidden ${theme === 'dark' ? 'border-slate-800 bg-slate-950' : 'border-slate-200 bg-white'
+              }`}>
+
               {/* iPhone Hardware Details */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-[1.2rem] z-50 flex items-center justify-center gap-1.5">
                 <div className="w-8 h-1 bg-white/10 rounded-full" /> {/* Speaker */}
@@ -104,7 +102,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
 
               {/* Screen Content */}
               <div className="flex-1 flex flex-col p-6 pt-16 overflow-hidden relative">
-                
+
                 {/* Chat Header Mock */}
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-xs">M</div>
@@ -118,7 +116,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
 
                 {/* Message History Mock */}
                 <div className="flex-1 space-y-6">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className={`p-4 rounded-3xl rounded-tl-none text-xs w-[85%] font-medium leading-relaxed ${theme === 'dark' ? 'bg-slate-800/80 text-slate-300' : 'bg-slate-100 text-slate-600'}`}
@@ -131,11 +129,11 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
                     <div className="relative p-4 rounded-3xl rounded-tr-none bg-indigo-600 text-white text-[11px] font-medium w-[92%] shadow-2xl leading-relaxed">
                       {displayText}
                       <span className="inline-block w-1 h-3 bg-white ml-0.5 animate-pulse" />
-                      
+
                       {/* Pop-out Dynamic Labels */}
                       <AnimatePresence>
                         {isWordVisible(13) && (
-                          <motion.div 
+                          <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                             animate={{ opacity: 1, y: -26, scale: 1 }}
                             className="absolute top-2 left-6 px-2 py-0.5 bg-yellow-400 text-slate-900 font-black text-[9px] rounded-lg uppercase shadow-[0_5px_15px_rgba(250,204,21,0.4)] flex items-center gap-1"
@@ -144,7 +142,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
                           </motion.div>
                         )}
                         {isWordVisible(24) && (
-                          <motion.div 
+                          <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                             animate={{ opacity: 1, y: -26, scale: 1 }}
                             className="absolute top-6 left-28 px-2 py-0.5 bg-blue-400 text-white font-black text-[9px] rounded-lg uppercase shadow-[0_5px_15px_rgba(96,165,250,0.4)] flex items-center gap-1"
@@ -153,7 +151,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
                           </motion.div>
                         )}
                         {isWordVisible(69) && (
-                          <motion.div 
+                          <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                             animate={{ opacity: 1, y: -26, scale: 1 }}
                             className="absolute top-14 right-4 px-2 py-0.5 bg-green-500 text-white font-black text-[9px] rounded-lg uppercase shadow-[0_5px_15px_rgba(34,197,94,0.4)] flex items-center gap-1"
@@ -168,7 +166,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
                   {/* Success Feedback Card */}
                   <AnimatePresence>
                     {step >= 1 && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         className={`p-5 rounded-[2.5rem] border text-center transition-all duration-300 shadow-2xl ${theme === 'dark' ? 'bg-slate-900/90 border-indigo-500/40' : 'bg-white border-indigo-100'}`}
@@ -209,15 +207,15 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
           </motion.div>
 
           {/* Floating Accents */}
-          <motion.div 
-            animate={{ y: [0, -20, 0] }} 
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -right-10 w-24 h-24 bg-purple-500/10 blur-3xl rounded-full" 
+            className="absolute -top-10 -right-10 w-24 h-24 bg-purple-500/10 blur-3xl rounded-full"
           />
-          <motion.div 
-            animate={{ y: [0, 20, 0] }} 
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full" 
+            className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full"
           />
         </div>
       </div>
