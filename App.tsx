@@ -20,6 +20,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Cpu, ShieldCheck, Zap } from 'lucide-react';
 
 const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> = ({ onEnter, theme }) => {
+  const logoUrl = "https://res.cloudinary.com/dkpwmrjkq/image/upload/v1771251254/cd0f3692-7e39-46e1-8c0f-60b0eee21b3f_b6krz5.jpg";
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onEnter();
+    }, 3500); // 3.5 seconds auto-transition
+    return () => clearTimeout(timer);
+  }, [onEnter]);
+
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -48,9 +57,9 @@ const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> =
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="w-20 h-20 md:w-28 md:h-28 bg-indigo-600 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-indigo-600/40 flex items-center justify-center"
+              className="w-20 h-20 md:w-28 md:h-28 bg-white rounded-[24px] md:rounded-[32px] shadow-2xl shadow-indigo-600/20 flex items-center justify-center overflow-hidden border-4 border-indigo-600/10"
             >
-              <Cpu className="w-10 h-10 md:w-14 md:h-14 text-white" />
+              <img src={logoUrl} alt="Logo" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
@@ -77,17 +86,12 @@ const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> =
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.8, duration: 0.5 }}
+          className="flex flex-col items-center gap-4"
         >
-          <button
-            onClick={onEnter}
-            className="group relative px-12 py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-[24px] font-black uppercase tracking-[0.2em] text-sm shadow-2xl shadow-indigo-600/40 active:scale-95 transition-all overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-3">
-              Initialize Neural Link
-              <Sparkles className="w-4 h-4 animate-bounce" />
-            </span>
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          </button>
+          <div className="flex items-center gap-2 text-indigo-500 font-bold text-xs uppercase tracking-widest animate-pulse">
+            <div className="w-2 h-2 rounded-full bg-indigo-500" />
+            Synchronizing Neural Nodes...
+          </div>
         </motion.div>
 
         <div className="mt-16 flex gap-8 md:gap-12 opacity-50">
