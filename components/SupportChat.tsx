@@ -64,7 +64,7 @@ const SupportChat: React.FC<SupportChatProps> = ({ theme }) => {
                 <HelpCircle className="w-5 h-5" />
                 <span className="font-bold text-sm">Support Assistant</span>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded-lg transition-colors">
+              <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-2 rounded-lg transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center">
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -90,7 +90,7 @@ const SupportChat: React.FC<SupportChatProps> = ({ theme }) => {
                 <button
                   key={faq.question}
                   onClick={() => handleQuickAction(faq)}
-                  className={`w-full text-left px-3 py-2 rounded-xl text-[10px] font-bold border flex items-center justify-between group transition-all ${theme === 'dark' ? 'border-slate-800 hover:bg-slate-800 text-slate-400' : 'border-slate-200 hover:bg-slate-50 text-slate-600'
+                  className={`w-full text-left px-3 py-3 rounded-xl text-[10px] font-bold border flex items-center justify-between group transition-all min-h-[48px] ${theme === 'dark' ? 'border-slate-800 hover:bg-slate-800 text-slate-400' : 'border-slate-200 hover:bg-slate-50 text-slate-600'
                     }`}
                 >
                   {faq.question}

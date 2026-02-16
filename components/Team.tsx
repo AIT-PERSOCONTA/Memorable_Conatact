@@ -48,8 +48,8 @@ const teamMembers = [
 
 const Team: React.FC<TeamProps> = ({ theme }) => {
   return (
-    <section id="team" className="py-16 md:py-24 px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="team" className="py-16 md:py-24 px-0 relative overflow-hidden">
+      <div className="responsive-container lg:max-w-[1200px]">
         <div className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -88,10 +88,10 @@ const Team: React.FC<TeamProps> = ({ theme }) => {
                 {/* Social Overlay */}
                 <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-500">
                   <div className="flex gap-4">
-                    <button className="p-3 bg-white rounded-full shadow-lg text-slate-900 hover:scale-110 transition-transform">
+                    <button className="p-4 bg-white rounded-full shadow-lg text-slate-900 hover:scale-110 transition-transform min-h-[48px] min-w-[48px] flex items-center justify-center">
                       <Linkedin className="w-5 h-5" />
                     </button>
-                    <button className="p-3 bg-white rounded-full shadow-lg text-slate-900 hover:scale-110 transition-transform">
+                    <button className="p-4 bg-white rounded-full shadow-lg text-slate-900 hover:scale-110 transition-transform min-h-[48px] min-w-[48px] flex items-center justify-center">
                       <Twitter className="w-5 h-5" />
                     </button>
                   </div>

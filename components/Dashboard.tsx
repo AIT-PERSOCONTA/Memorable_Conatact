@@ -218,13 +218,13 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
             />
           </div>
           <div className="flex items-center gap-2 lg:gap-6">
-            <button className={`p-3 lg:p-4 rounded-xl border relative min-h-[44px] min-w-[44px] flex items-center justify-center ${theme === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-400' : 'bg-white border-slate-200 text-slate-500'}`}>
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-indigo-500 rounded-full border-2 border-white dark:border-slate-950" />
+            <button className={`p-3 lg:p-4 rounded-xl border relative min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'bg-slate-800 border-slate-700 text-slate-400 hover:text-white' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-indigo-600'}`}>
+              <Bell className="w-5 h-5 lg:w-6 lg:h-6" />
+              <span className="absolute top-3 right-3 w-2 h-2 bg-indigo-500 rounded-full border-2 border-white dark:border-slate-800" />
             </button>
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="px-4 lg:px-8 py-3 lg:py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-[10px] lg:text-sm font-black shadow-lg transition-all uppercase tracking-widest whitespace-nowrap min-h-[44px]"
+              className={`px-4 md:px-6 py-3 lg:py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl md:rounded-2xl text-[10px] md:text-sm font-black uppercase tracking-widest transition-all shadow-xl shadow-indigo-600/20 active:scale-95 border border-white/10 min-h-[48px] flex items-center justify-center`}
             >
               <Plus className="w-5 h-5 sm:hidden" />
               <span className="hidden sm:inline">New Entry</span>

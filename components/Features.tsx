@@ -60,7 +60,7 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 relative">
+    <div className="responsive-container relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/5 blur-[100px] rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 blur-[100px] rounded-full -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
@@ -127,9 +127,9 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
               {f.description}
             </p>
 
-            <div className="mt-8 pt-6 border-t border-slate-800/10 dark:border-white/5 w-full flex items-center justify-between group/link">
+            <div className="mt-8 pt-6 border-t border-slate-800/10 dark:border-white/5 w-full flex items-center justify-between group/link cursor-pointer min-h-[48px]">
               <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500">Read Protocol</span>
-              <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover/link:bg-indigo-600 group-hover/link:text-white transition-all">
+              <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover/link:bg-indigo-600 group-hover/link:text-white transition-all">
                 <Zap className="w-4 h-4" />
               </div>
             </div>

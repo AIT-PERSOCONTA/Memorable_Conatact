@@ -38,11 +38,11 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) => {
   return (
-    <section id="testimonials" className="py-32 px-6 lg:px-24 relative overflow-hidden">
+    <section id="testimonials" className="py-32 px-0 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+      <div className="responsive-container flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
 
         {/* Left Side: Content & Graphic */}
         <div className="lg:w-[40%] flex flex-col items-start pt-8">

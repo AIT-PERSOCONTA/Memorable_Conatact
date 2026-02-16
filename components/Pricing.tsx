@@ -53,8 +53,8 @@ const Pricing: React.FC<PricingProps> = ({ theme }) => {
   ];
 
   return (
-    <section id="pricing" className="py-16 md:py-24 px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="py-16 md:py-24 px-0 relative overflow-hidden">
+      <div className="responsive-container lg:max-w-[1200px]">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ const Pricing: React.FC<PricingProps> = ({ theme }) => {
               <div className={`relative h-full glass p-6 md:p-8 rounded-[24px] md:rounded-[32px] border transition-all duration-300 flex flex-col ${plan.popular
                 ? (theme === 'dark' ? 'bg-slate-900 border-indigo-500/50 scale-100 md:scale-105' : 'bg-white border-indigo-400 scale-100 md:scale-105 shadow-2xl')
                 : (theme === 'dark' ? 'bg-slate-900/50 border-slate-800 hover:border-slate-700' : 'bg-white border-slate-200 hover:bg-white hover:border-indigo-400 shadow-sm hover:shadow-xl')
-                }`}>
+                } w-full`}>
                 <div className="mb-8 text-left">
                   <h3 className={`text-lg font-black mb-2 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{plan.name}</h3>
                   <div className="flex items-baseline gap-1">
@@ -132,7 +132,7 @@ const Pricing: React.FC<PricingProps> = ({ theme }) => {
                   ))}
                 </ul>
 
-                <button className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all active:scale-95 shadow-md ${plan.popular
+                <button className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all active:scale-95 shadow-md min-h-[48px] ${plan.popular
                   ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-600/30'
                   : (theme === 'dark' ? 'bg-slate-800 hover:bg-slate-700 text-white' : 'bg-white border border-slate-200 hover:bg-slate-50 text-slate-900 hover:border-indigo-400')
                   }`}>

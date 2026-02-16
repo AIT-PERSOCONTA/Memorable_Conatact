@@ -194,7 +194,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                 </div>
                 <button
                     onClick={refreshChat}
-                    className={`p-2 rounded-xl transition-all ${theme === 'dark' ? 'bg-slate-800 text-slate-400 hover:text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'}`}
+                    className={`p-3 rounded-xl transition-all min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'bg-slate-800 text-slate-400 hover:text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'}`}
                     title="Refresh Chat"
                 >
                     <RefreshCw className="w-5 h-5" />
@@ -281,7 +281,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
             {/* Input Area */}
             <div className={`p-4 md:p-6 border-t ${theme === 'dark' ? 'border-slate-800 bg-slate-900/50' : 'bg-white border-orange-50'}`}>
                 <div className="relative flex items-center gap-2 md:gap-3">
-                    <button className={`p-2.5 md:p-2.5 rounded-xl border transition-all min-h-[44px] min-w-[44px] flex items-center justify-center ${theme === 'dark' ? 'border-slate-800 text-slate-500 hover:text-white' : 'border-orange-100 text-orange-400 hover:bg-orange-50'}`}>
+                    <button className={`p-3 md:p-3 rounded-xl border transition-all min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'border-slate-800 text-slate-500 hover:text-white' : 'border-orange-100 text-orange-400 hover:bg-orange-50'}`}>
                         <ImageIcon className="w-5 h-5 md:w-5 md:h-5" />
                     </button>
                     <input
@@ -290,7 +290,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                         placeholder="Neural Query..."
-                        className={`flex-1 py-3 md:py-3 px-4 md:px-5 rounded-xl md:rounded-2xl text-[12px] md:text-sm border font-bold focus:outline-none focus:ring-4 focus:ring-orange-500/10 transition-all min-h-[44px] ${theme === 'dark'
+                        className={`flex-1 py-4 md:py-4 px-4 md:px-5 rounded-xl md:rounded-2xl text-[12px] md:text-sm border font-bold focus:outline-none focus:ring-4 focus:ring-orange-500/10 transition-all min-h-[48px] ${theme === 'dark'
                             ? 'bg-slate-800 border-slate-700 text-slate-100 placeholder:text-slate-600'
                             : 'bg-white border-orange-100 text-slate-900 placeholder:text-slate-400'
                             }`}
@@ -298,7 +298,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                     <button
                         onClick={handleSend}
                         disabled={isTyping || !input.trim()}
-                        className={`p-3 md:p-3 rounded-xl md:rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-500/20 active:scale-95 transition-all min-h-[44px] min-w-[44px] flex items-center justify-center ${(!input.trim() || isTyping) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'}`}
+                        className={`p-3 md:p-3 rounded-xl md:rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-500/20 active:scale-95 transition-all min-h-[48px] min-w-[48px] flex items-center justify-center ${(!input.trim() || isTyping) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'}`}
                     >
                         <Send className="w-5 h-5 md:w-5 md:h-5" />
                     </button>

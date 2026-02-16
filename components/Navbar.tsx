@@ -68,21 +68,21 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
         <div className="flex items-center gap-2 md:gap-4">
           <button
             onClick={toggleTheme}
-            className={`p-2 md:p-2.5 rounded-lg md:rounded-xl transition-all duration-300 ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
+            className={`p-3 md:p-3 rounded-lg md:rounded-xl transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
             aria-label="Toggle Theme"
           >
-            {theme === 'dark' ? <Sun className="w-4 h-4 md:w-5 md:h-5" /> : <Moon className="w-4 h-4 md:w-5 md:h-5" />}
+            {theme === 'dark' ? <Sun className="w-5 h-5 md:w-5 md:h-5" /> : <Moon className="w-5 h-5 md:w-5 md:h-5" />}
           </button>
 
-          <button onClick={onDashboardToggle} className="hidden md:block px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl md:rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-indigo-600/20 active:scale-95 border border-white/10">
+          <button onClick={onDashboardToggle} className="hidden md:flex px-6 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl md:rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-indigo-600/20 active:scale-95 border border-white/10 min-h-[48px]">
             Book a Call
           </button>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`xl:hidden p-2 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
+            className={`xl:hidden p-3 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>
@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
                     }, 100);
                   }
                 }}
-                className={`text-lg font-black uppercase tracking-widest px-4 py-3 rounded-xl text-left transition-all ${(currentView === link.view && activeSection === link.section) ? 'bg-indigo-600 text-white' : (theme === 'dark' ? 'text-slate-400 hover:bg-slate-800 hover:text-white' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900')}`}
+                className={`text-lg font-black uppercase tracking-widest px-4 py-4 rounded-xl text-left transition-all min-h-[48px] ${(currentView === link.view && activeSection === link.section) ? 'bg-indigo-600 text-white' : (theme === 'dark' ? 'text-slate-400 hover:bg-slate-800 hover:text-white' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900')}`}
               >
                 {link.label}
               </button>
@@ -117,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
             <div className="h-px bg-slate-800/50 my-2" />
             <button
               onClick={() => { onDashboardToggle?.(); closeMenu(); }}
-              className="w-full py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl"
+              className="w-full py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl min-h-[56px]"
             >
               Book a Call
             </button>

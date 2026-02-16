@@ -12,7 +12,7 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ theme, onBack }) => {
     return (
         <div className={`min-h-screen pt-20 pb-16 px-0 transition-colors duration-300 md:pt-32 md:pb-20 md:px-6 ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
-            <div className="responsive-container lg:max-w-7xl">
+            <div className="responsive-container lg:max-w-[1200px]">
                 {/* Navigation Back */}
                 <motion.button
                     initial={{ opacity: 0, x: -20 }}
@@ -29,15 +29,15 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className={`mb-20 md:mb-32 rounded-[24px] overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ${theme === 'dark'
+                    className={`mb-20 md:mb-32 rounded-[24px] overflow-hidden flex flex-col md:flex-row transition-all duration-300 ${theme === 'dark'
                         ? 'bg-slate-900 border-slate-800 shadow-2xl'
                         : 'bg-white border-slate-200 shadow-[0px_10px_30px_rgba(0,0,0,0.08)]'
                         } border mx-auto w-full`}
                 >
                     {/* Left Side: Content */}
-                    <div className="flex-1 p-6 md:p-12 lg:p-16">
+                    <div className="flex-1 p-6 md:p-12 lg:p-16 text-center md:text-left">
                         <h2 className={`text-2xl md:text-3xl lg:text-5xl font-black tracking-tighter leading-tight mb-6 md:mb-8 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-                            Rescuing Relationships from the <br />
+                            Rescuing Relationships from the <br className="hidden md:block" />
                             <span className="text-indigo-600">Limits of Human Memory.</span>
                         </h2>
 
@@ -62,7 +62,7 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                     </div>
 
                     {/* Right Side: Visual */}
-                    <div className={`w-full lg:w-[45%] relative overflow-hidden flex flex-col ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
+                    <div className={`w-full md:w-[45%] relative overflow-hidden flex flex-col ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
                         <div className={`absolute inset-0 pointer-events-none ${theme === 'dark' ? 'bg-gradient-to-br from-indigo-950/50 to-slate-950' : 'bg-gradient-to-br from-indigo-100/50 to-white'}`} />
 
                         <div className="relative flex-1 flex items-end justify-center pt-12 md:pt-20">
@@ -73,7 +73,7 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                             />
                         </div>
 
-                        <div className={`p-6 md:p-12 backdrop-blur-md relative z-20 border-t ${theme === 'dark' ? 'bg-slate-900/80 border-slate-800' : 'bg-white/90 border-slate-100'}`}>
+                        <div className={`p-6 md:p-12 backdrop-blur-md relative z-20 border-t text-center md:text-left ${theme === 'dark' ? 'bg-slate-900/80 border-slate-800' : 'bg-white/90 border-slate-100'}`}>
                             <div className={`text-xl md:text-2xl font-black mb-1 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Amurtha</div>
                             <div className="text-indigo-600 text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 md:mb-4">Founder & CEO</div>
                             <div className={`text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>Asokumar Group of Companies</div>

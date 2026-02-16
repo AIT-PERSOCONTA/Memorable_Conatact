@@ -83,8 +83,8 @@ const ExperienceFlow: React.FC<ExperienceFlowProps> = ({ theme }) => {
     };
 
     return (
-        <section className={`py-32 px-6 relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-950' : 'bg-white'}`}>
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section className={`py-32 px-0 relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-950' : 'bg-white'}`}>
+            <div className="responsive-container relative z-10">
                 <div className="text-center mb-20 lg:mb-24">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -113,8 +113,8 @@ const ExperienceFlow: React.FC<ExperienceFlowProps> = ({ theme }) => {
                             className="flex flex-col items-center gap-4 group"
                         >
                             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${activeStep === s.id
-                                    ? 'bg-indigo-600 text-white shadow-2xl shadow-indigo-600/40 scale-110'
-                                    : theme === 'dark' ? 'bg-slate-900 text-slate-500 border border-slate-800' : 'bg-slate-50 text-slate-400 border border-slate-200'
+                                ? 'bg-indigo-600 text-white shadow-2xl shadow-indigo-600/40 scale-110'
+                                : theme === 'dark' ? 'bg-slate-900 text-slate-500 border border-slate-800' : 'bg-slate-50 text-slate-400 border border-slate-200'
                                 }`}>
                                 {s.icon}
                             </div>
@@ -135,8 +135,8 @@ const ExperienceFlow: React.FC<ExperienceFlowProps> = ({ theme }) => {
                             onHoverStart={() => setActiveStep(s.id)}
                             onHoverEnd={() => setActiveStep(null)}
                             className={`group relative p-8 rounded-[40px] border transition-all duration-500 overflow-hidden flex flex-col h-full ${theme === 'dark'
-                                    ? 'bg-slate-900/40 border-slate-800 hover:border-indigo-500/50 hover:bg-slate-900'
-                                    : 'bg-slate-50 border-slate-200 hover:border-indigo-400 hover:bg-white shadow-sm hover:shadow-2xl'
+                                ? 'bg-slate-900/40 border-slate-800 hover:border-indigo-500/50 hover:bg-slate-900'
+                                : 'bg-slate-50 border-slate-200 hover:border-indigo-400 hover:bg-white shadow-sm hover:shadow-2xl'
                                 }`}
                         >
                             {/* Background Accents */}

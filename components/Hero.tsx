@@ -55,21 +55,21 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
           Capture context via Chatbot, search via semantic intent, and recall every detail instantly.
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 w-full sm:flex-row sm:gap-8">
+        <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8">
           <button
             onClick={onGetStarted}
-            className="w-full sm:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)]"
+            className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[48px]"
           >
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all min-h-[50px] ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all min-h-[48px] ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
               Book a Call
               <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
             </div>
           </button>
 
-          <button className="w-full sm:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95">
+          <button className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 min-h-[48px]">
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#FBBC05_33%,#34A853_66%,#4285F4_100%)] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all backdrop-blur-xl min-h-[50px] ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all backdrop-blur-xl min-h-[48px] ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
               Watch Demo
               <Play className="w-4 h-4 md:w-6 md:h-6 fill-current" />
             </div>
