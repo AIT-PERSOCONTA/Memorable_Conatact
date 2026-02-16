@@ -22,15 +22,12 @@ import { ShieldCheck, Zap } from 'lucide-react';
 const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> = ({ onEnter, theme }) => {
   const logoUrl = "https://res.cloudinary.com/dkpwmrjkq/image/upload/v1771251254/cd0f3692-7e39-46e1-8c0f-60b0eee21b3f_b6krz5.jpg";
 
-  // Interaction-based entry to allow voice greeting (browser restriction)
-  const [isReady, setIsReady] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 2500); // 2.5 seconds to show "ready" state
+      onEnter();
+    }, 3500); // 3.5 seconds auto-transition
     return () => clearTimeout(timer);
-  }, []);
+  }, [onEnter]);
 
   return (
     <motion.div
@@ -86,38 +83,15 @@ const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> =
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 0.5 }}
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col items-center gap-4"
         >
-          <AnimatePresence mode="wait">
-            {!isReady ? (
-              <motion.div
-                key="loading"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center gap-2 text-indigo-500 font-bold text-[10px] md:text-xs uppercase tracking-widest animate-pulse"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-                Synchronizing Neural Nodes...
-              </motion.div>
-            ) : (
-              <motion.button
-                key="enter"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={onEnter}
-                className="px-8 py-3.5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] md:text-xs shadow-xl shadow-indigo-600/30 flex items-center gap-3 transition-all"
-              >
-                Establish Neural Link
-                <Zap className="w-3.5 h-3.5 fill-current" />
-              </motion.button>
-            )}
-          </AnimatePresence>
+          <div className="flex items-center gap-2 text-indigo-500 font-bold text-[10px] md:text-xs uppercase tracking-widest animate-pulse">
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+            Synchronizing Neural Nodes...
+          </div>
         </motion.div>
 
         <div className="mt-16 flex gap-8 md:gap-12 opacity-50">
