@@ -151,12 +151,12 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
             >
               <div className="p-8">
                 <div className="flex justify-between items-center mb-10">
-                  <div className="flex items-center gap-3">
-                    <img src={logoUrl} className="w-10 h-10 rounded-xl" alt="Logo" />
-                    <span className={`text-lg font-black tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>MemorableContact</span>
+                  <div className="flex items-center gap-2">
+                    <img src={logoUrl} className="w-8 h-8 rounded-lg" alt="Logo" />
+                    <span className={`text-base font-black tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>MemorableContact</span>
                   </div>
-                  <button onClick={() => setIsSidebarOpen(false)} className="p-2 rounded-xl bg-slate-800/20 text-slate-500">
-                    <X className="w-5 h-5" />
+                  <button onClick={() => setIsSidebarOpen(false)} className={`p-1.5 rounded-lg transition-colors ${theme === 'dark' ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-500'}`}>
+                    <X className="w-4 h-4" />
                   </button>
                 </div>
 
@@ -213,7 +213,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
             <input
               type="text"
               placeholder="Query..."
-              className={`w-full py-2.5 lg:py-4 pl-10 lg:pl-14 pr-4 rounded-xl text-[10px] lg:text-sm border font-black focus:outline-none focus:ring-4 focus:ring-indigo-500/10 transition-all ${theme === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-200 placeholder:text-slate-600' : 'bg-white border-slate-200 text-slate-900 shadow-sm placeholder:text-slate-400'
+              className={`w-full py-2.5 lg:py-4 pl-9 lg:pl-14 pr-4 rounded-xl text-[10px] lg:text-sm border font-black focus:outline-none focus:ring-4 focus:ring-indigo-500/10 transition-all ${theme === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-200 placeholder:text-slate-600' : 'bg-white border-slate-200 text-slate-900 shadow-sm placeholder:text-slate-400'
                 }`}
             />
           </div>
@@ -236,8 +236,8 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
         <div className="flex-1 overflow-y-auto p-6 lg:p-12 scrollbar-hide">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 lg:mb-12 gap-6">
             <div className="text-left">
-              <h1 className={`text-2xl lg:text-4xl font-black mb-1 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{activeTab}</h1>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 opacity-60">
+              <h1 className={`text-xl lg:text-4xl font-black mb-1 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{activeTab}</h1>
+              <p className="text-[9px] font-black uppercase tracking-widest text-slate-500 opacity-60">
                 {activeTab === 'My Contacts' ? `Relationship Fragments (${contacts.length})` : 'Neural Interface Active'}
               </p>
             </div>
@@ -297,9 +297,9 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
                                   </div>
                                 )}
                               </div>
-                              <div className="flex flex-col text-left">
-                                <span className={`text-[11px] lg:text-sm font-black ${theme === 'dark' ? 'text-slate-200' : 'text-slate-900'}`}>{contact.name}</span>
-                                <span className="text-[8px] font-bold text-slate-500">{contact.phone}</span>
+                              <div className="flex flex-col text-left overflow-hidden">
+                                <span className={`text-[10px] lg:text-sm font-black truncate max-w-[120px] md:max-w-none ${theme === 'dark' ? 'text-slate-200' : 'text-slate-900'}`}>{contact.name}</span>
+                                <span className="text-[7px] md:text-[8px] font-bold text-slate-500 truncate">{contact.phone}</span>
                               </div>
                             </div>
                           </td>

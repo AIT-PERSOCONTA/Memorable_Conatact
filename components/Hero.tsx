@@ -21,7 +21,7 @@ const Counter = ({ value, label, theme, suffix = "", decimals = 0 }: { value: nu
 
   return (
     <div>
-      <div className="flex justify-center items-baseline text-3xl md:text-4xl font-black">
+      <div className="flex justify-center items-baseline text-2xl md:text-4xl font-black">
         <motion.span>{rounded}</motion.span>
         <span>{suffix}</span>
       </div>
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
           </div>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] md:leading-[0.9] mb-8 md:mb-10">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-10">
           <span className="gradient-text">Never Forget A Professional</span>
           <br />
           <span className="gradient-text">Connection Again.</span>
@@ -61,17 +61,17 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
             className="relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)]"
           >
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
-            <div className={`relative flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-lg md:text-xl transition-all ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
               Book a Call
-              <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
             </div>
           </button>
 
           <button className="relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95">
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#FBBC05_33%,#34A853_66%,#4285F4_100%)] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className={`relative flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-lg md:text-xl transition-all backdrop-blur-xl ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all backdrop-blur-xl ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
               Watch Demo
-              <Play className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+              <Play className="w-4 h-4 md:w-6 md:h-6 fill-current" />
             </div>
           </button>
         </div>

@@ -78,10 +78,10 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
         >
           <Sparkles className="w-3 h-3" /> Core Engine
         </motion.div>
-        <h2 className={`text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+        <h2 className={`text-3xl md:text-6xl font-black mb-6 tracking-tight leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
           Powerful Core <span className="gradient-text">Capabilities.</span>
         </h2>
-        <p className={`max-w-2xl mx-auto font-medium text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+        <p className={`max-w-2xl mx-auto font-medium text-base md:text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
           Designed for networkers, sales pros, and leaders who value every connection.
         </p>
       </motion.div>
@@ -104,16 +104,16 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
               transition: { duration: 0.3 }
             }}
             className={`relative glass p-8 md:p-10 rounded-[32px] md:rounded-[40px] transition-all group border flex flex-col items-start text-left ${theme === 'dark'
-                ? 'border-slate-800 hover:bg-white/5 hover:border-indigo-500/50 shadow-2xl shadow-indigo-500/5'
-                : 'border-slate-200 bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-10px_rgba(79,70,229,0.15)] hover:border-indigo-400'
+              ? 'border-slate-800 hover:bg-white/5 hover:border-indigo-500/50 shadow-2xl shadow-indigo-500/5'
+              : 'border-slate-200 bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-10px_rgba(79,70,229,0.15)] hover:border-indigo-400'
               }`}
           >
             {/* Inner Glow Effect */}
             <div className={`absolute inset-0 rounded-[32px] md:rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-indigo-500/5 to-transparent`} />
 
             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 ${theme === 'dark'
-                ? 'bg-slate-800 text-white'
-                : 'bg-indigo-50 border border-indigo-100 text-indigo-600'
+              ? 'bg-slate-800 text-white'
+              : 'bg-indigo-50 border border-indigo-100 text-indigo-600'
               }`}>
               {f.icon}
             </div>
