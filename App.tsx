@@ -16,11 +16,100 @@ import About from './pages/About';
 import Resources from './pages/Resources';
 import PricingPage from './pages/PricingPage';
 import ExperienceFlow from './components/ExperienceFlow';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, Cpu, ShieldCheck, Zap } from 'lucide-react';
+
+const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> = ({ onEnter, theme }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0, scale: 1.1 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 blur-[120px] rounded-full animate-pulse" />
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 flex flex-col items-center"
+      >
+        <div className="relative mb-12">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="w-32 h-32 md:w-48 md:h-48 border-2 border-dashed border-indigo-500/30 rounded-full"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="w-20 h-20 md:w-28 md:h-28 bg-indigo-600 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-indigo-600/40 flex items-center justify-center"
+            >
+              <Cpu className="w-10 h-10 md:w-14 md:h-14 text-white" />
+            </motion.div>
+          </div>
+        </div>
+
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-center"
+        >
+          Memorable<span className="text-indigo-600">Contact</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.3, duration: 0.8 }}
+          className={`text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-12 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}
+        >
+          Cognitive Relationship Protocol v2.0
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.8, duration: 0.5 }}
+        >
+          <button
+            onClick={onEnter}
+            className="group relative px-12 py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-[24px] font-black uppercase tracking-[0.2em] text-sm shadow-2xl shadow-indigo-600/40 active:scale-95 transition-all overflow-hidden"
+          >
+            <span className="relative z-10 flex items-center gap-3">
+              Initialize Neural Link
+              <Sparkles className="w-4 h-4 animate-bounce" />
+            </span>
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          </button>
+        </motion.div>
+
+        <div className="mt-16 flex gap-8 md:gap-12 opacity-50">
+          <div className="flex flex-col items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-indigo-500" />
+            <span className="text-[8px] font-black uppercase tracking-widest">Secure</span>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <Zap className="w-5 h-5 text-indigo-500" />
+            <span className="text-[8px] font-black uppercase tracking-widest">Instant</span>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [showDashboard, setShowDashboard] = useState(false);
   const [view, setView] = useState<'home' | 'about' | 'resources' | 'pricing'>('home');
+  const [isInitializing, setIsInitializing] = useState(true);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     return (localStorage.getItem('memorable-contact-theme') as 'light' | 'dark') || 'dark';
   });
@@ -38,6 +127,21 @@ const App: React.FC = () => {
   }, [theme]);
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
+  const handleInitialize = () => {
+    setIsInitializing(false);
+    // Voice Greeting
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance("Welcome to Memorable Contact");
+      utterance.rate = 0.9;
+      utterance.pitch = 1.1;
+      // Try to find a nice female/neural voice if available
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(v => v.name.includes('Google') || v.name.includes('Neural')) || voices[0];
+      if (preferredVoice) utterance.voice = preferredVoice;
+      window.speechSynthesis.speak(utterance);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +162,12 @@ const App: React.FC = () => {
 
   return (
     <div className={`relative min-h-screen transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-950 text-slate-50' : 'bg-slate-50 text-slate-900'}`}>
+      <AnimatePresence>
+        {isInitializing && (
+          <SplashScreen theme={theme} onEnter={handleInitialize} />
+        )}
+      </AnimatePresence>
+
       <NeuralBackground theme={theme} />
 
       <div className="relative z-10 flex flex-col items-center">

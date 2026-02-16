@@ -29,19 +29,19 @@ const teamMembers = [
   {
     name: "Arun Chintesh",
     role: "Product Management",
-    bio: "Visual storyteller reimagining digital interactions through the lens of cognitive ergonomics and aesthetic precision.",
+    bio: "Strategic lead defining the future of neural relationship management and product synergy across the digital ecosystem.",
     color: "bg-orange-500"
   },
   {
     name: "Aswathy",
     role: "Director Product Development",
-    bio: "Systems architect focused on scaling the retrieval engine to handle trillions of relationship fragments with millisecond latency.",
+    bio: "Visionary overseeing the full engineering lifecycle and scaling cognitive memory solutions for global impact.",
     color: "bg-green-500"
   },
   {
     name: "Hemanth M",
     role: "Web Developer",
-    bio: "Growth strategist dedicated to spreading the vision of permanent human connections across the global professional landscape.",
+    bio: "Specialized in creating high-fidelity, responsive neural interfaces and interactive digital architectures.",
     color: "bg-pink-500"
   }
 ];

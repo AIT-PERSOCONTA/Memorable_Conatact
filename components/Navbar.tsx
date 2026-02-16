@@ -38,10 +38,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
             <div className="absolute -inset-1.5 bg-indigo-500/10 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className={`text-base md:text-xl font-black tracking-tighter leading-none bg-gradient-to-r ${theme === 'dark' ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'} bg-clip-text text-transparent`}>
+            <span className={`text-sm md:text-xl font-black tracking-tighter leading-none bg-gradient-to-r ${theme === 'dark' ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'} bg-clip-text text-transparent`}>
               MemorableContact
             </span>
-            <span className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-indigo-500 mt-0.5">By Asokumar IT</span>
+            <span className="text-[6px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-indigo-500 mt-0.5">By Asokumar IT</span>
           </div>
         </div>
 

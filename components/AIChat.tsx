@@ -177,12 +177,12 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
     };
 
     return (
-        <div className={`flex flex-col h-[600px] rounded-[32px] overflow-hidden border ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'}`}>
+        <div className={`flex flex-col h-[500px] md:h-[600px] lg:h-[700px] rounded-[24px] md:rounded-[32px] overflow-hidden border ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'}`}>
             {/* Chat Header */}
             <div className={`p-6 border-b flex items-center justify-between ${theme === 'dark' ? 'bg-slate-900 border-slate-800' : 'bg-orange-50/50 border-orange-100'}`}>
-                <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-lg">
-                        <Bot className="w-6 h-6" />
+                <div className="flex items-center gap-2 md:gap-4">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-lg">
+                        <Bot className="w-4 h-4 md:w-6 md:h-6" />
                     </div>
                     <div>
                         <h3 className={`text-sm font-black uppercase tracking-widest ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>AI Memory Assistant</h3>
@@ -202,7 +202,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
             </div>
 
             {/* Messages Area */}
-            <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide bg-gradient-to-b from-transparent to-orange-500/5">
+            <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6 scrollbar-hide bg-gradient-to-b from-transparent to-orange-500/5">
                 <AnimatePresence>
                     {messages.map((msg: ChatMessage) => (
                         <motion.div
@@ -211,12 +211,12 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                             animate={{ opacity: 1, y: 0 }}
                             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                         >
-                            <div className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                                <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-lg ${msg.role === 'user' ? 'bg-orange-600' : 'bg-white border border-orange-100'}`}>
-                                    {msg.role === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-orange-500" />}
+                            <div className={`flex gap-2 md:gap-3 max-w-[90%] md:max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
+                                <div className={`w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl flex items-center justify-center shrink-0 shadow-lg ${msg.role === 'user' ? 'bg-orange-600' : 'bg-white border border-orange-100'}`}>
+                                    {msg.role === 'user' ? <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" /> : <Bot className="w-3.5 h-3.5 md:w-4 md:h-4 text-orange-500" />}
                                 </div>
                                 <div className="space-y-3">
-                                    <div className={`px-5 py-3.5 rounded-[20px] text-sm leading-relaxed shadow-sm ${msg.role === 'user'
+                                    <div className={`px-4 py-3 rounded-[18px] text-[12px] md:text-sm leading-relaxed shadow-sm ${msg.role === 'user'
                                         ? 'bg-orange-600 text-white rounded-tr-none'
                                         : (theme === 'dark' ? 'bg-slate-800 text-slate-200 rounded-tl-none' : 'bg-white text-slate-700 rounded-tl-none border border-orange-50')
                                         }`}>
@@ -279,18 +279,18 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
             </div>
 
             {/* Input Area */}
-            <div className={`p-6 border-t ${theme === 'dark' ? 'border-slate-800 bg-slate-900/50' : 'bg-white border-orange-50'}`}>
-                <div className="relative flex items-center gap-3">
-                    <button className={`p-2.5 rounded-xl border transition-all ${theme === 'dark' ? 'border-slate-800 text-slate-500 hover:text-white' : 'border-orange-100 text-orange-400 hover:bg-orange-50'}`}>
-                        <ImageIcon className="w-5 h-5" />
+            <div className={`p-4 md:p-6 border-t ${theme === 'dark' ? 'border-slate-800 bg-slate-900/50' : 'bg-white border-orange-50'}`}>
+                <div className="relative flex items-center gap-2 md:gap-3">
+                    <button className={`p-2 md:p-2.5 rounded-xl border transition-all ${theme === 'dark' ? 'border-slate-800 text-slate-500 hover:text-white' : 'border-orange-100 text-orange-400 hover:bg-orange-50'}`}>
+                        <ImageIcon className="w-4 h-4 md:w-5 md:h-5" />
                     </button>
                     <input
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                        placeholder="Type a name, ph no, email or keyword..."
-                        className={`flex-1 py-3 px-5 rounded-2xl text-sm border font-bold focus:outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${theme === 'dark'
+                        placeholder="Neural Query..."
+                        className={`flex-1 py-2.5 md:py-3 px-4 md:px-5 rounded-xl md:rounded-2xl text-[12px] md:text-sm border font-bold focus:outline-none focus:ring-4 focus:ring-orange-500/10 transition-all ${theme === 'dark'
                             ? 'bg-slate-800 border-slate-700 text-slate-100 placeholder:text-slate-600'
                             : 'bg-white border-orange-100 text-slate-900 placeholder:text-slate-400'
                             }`}
@@ -298,9 +298,9 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                     <button
                         onClick={handleSend}
                         disabled={isTyping || !input.trim()}
-                        className={`p-3 rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-500/20 active:scale-95 transition-all ${(!input.trim() || isTyping) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'}`}
+                        className={`p-2.5 md:p-3 rounded-xl md:rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-500/20 active:scale-95 transition-all ${(!input.trim() || isTyping) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'}`}
                     >
-                        <Send className="w-5 h-5" />
+                        <Send className="w-4 h-4 md:w-5 md:h-5" />
                     </button>
                 </div>
             </div>

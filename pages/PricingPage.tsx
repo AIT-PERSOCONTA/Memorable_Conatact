@@ -64,10 +64,10 @@ const PricingPage: React.FC<PricingPageProps> = ({ theme, onBack }) => {
                     >
                         Transparent Investment
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-black mb-6 md:mb-8 tracking-tighter leading-tight">
                         Choose Your <span className="text-indigo-600">Cognitive</span> Tier
                     </h1>
-                    <p className={`max-w-2xl mx-auto font-bold text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+                    <p className={`max-w-2xl mx-auto font-bold text-sm md:text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
                         Scale your networking potential with plans designed for every level of professional impact.
                     </p>
                 </div>
@@ -79,7 +79,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ theme, onBack }) => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 + (i * 0.1) }}
-                            className={`relative group h-full rounded-[40px] p-1 pt-1 ${plan.popular ? 'bg-gradient-to-b from-indigo-500 to-purple-600 shadow-2xl scale-105 z-10' : ''}`}
+                            className={`relative group h-full rounded-[40px] p-1 pt-1 ${plan.popular ? 'bg-gradient-to-b from-indigo-500 to-purple-600 shadow-2xl md:scale-105 z-10' : ''}`}
                         >
                             <div className={`h-full rounded-[39px] p-8 md:p-10 flex flex-col transition-all duration-500 ${theme === 'dark'
                                 ? 'bg-slate-900 border border-slate-800 group-hover:bg-slate-800/80'
@@ -137,10 +137,10 @@ const PricingPage: React.FC<PricingPageProps> = ({ theme, onBack }) => {
                     className="mt-32 p-12 lg:p-16 rounded-[40px] border relative overflow-hidden flex flex-col items-center text-center transition-colors duration-300 bg-indigo-600/5 border-indigo-500/20"
                 >
                     <div className="max-w-3xl">
-                        <Shield className="w-12 h-12 text-indigo-500 mx-auto mb-8" />
-                        <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter">Enterprise-Grade Neural Privacy</h2>
-                        <p className={`text-lg font-medium leading-relaxed mb-12 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-                            Your memory is sacred. We use end-to-end cognitive encryption and localized neural nodes to ensure your connections stay yours, and only yours. No data is ever sold or shared.
+                        <Shield className="w-10 h-10 md:w-12 md:h-12 text-indigo-500 mx-auto mb-6 md:mb-8" />
+                        <h2 className="text-2xl md:text-5xl font-black mb-6 md:mb-8 tracking-tighter">Enterprise-Grade Neural Privacy</h2>
+                        <p className={`text-sm md:text-lg font-medium leading-relaxed mb-10 md:mb-12 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+                            Your memory is sacred. We use end-to-end cognitive encryption and localized neural nodes to ensure your connections stay yours. No data is ever sold or shared.
                         </p>
                         <div className="flex flex-wrap justify-center gap-8">
                             <div className="flex items-center gap-2">

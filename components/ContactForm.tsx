@@ -90,7 +90,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose, onSubmit, th
                         {/* Header */}
                         <div className={`px-8 py-6 border-b flex items-center justify-between ${theme === 'dark' ? 'border-slate-800' : 'border-slate-100'}`}>
                             <div>
-                                <h3 className="text-xl font-black tracking-tight">New Connection</h3>
+                                <span className={`text-sm md:text-xl font-black tracking-tighter leading-none bg-gradient-to-r ${theme === 'dark' ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'} bg-clip-text text-transparent`}>
+                                    MemorableContact
+                                </span>
+                                <span className="text-[6px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-indigo-500 mt-0.5">By Asokumar IT</span>
                                 <p className="text-[10px] font-black uppercase tracking-widest text-indigo-500">Node Synchronization</p>
                             </div>
                             <button
@@ -101,7 +104,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose, onSubmit, th
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                        <form onSubmit={handleSubmit} className="p-4 md:p-8 space-y-4 md:space-y-6">
                             {/* Profile Image Simulation */}
                             <div className="flex justify-center mb-8">
                                 <div className={`relative w-24 h-24 rounded-[32px] border-2 border-dashed flex items-center justify-center group cursor-pointer transition-all ${theme === 'dark' ? 'border-slate-700 hover:border-indigo-500 bg-slate-800/50' : 'border-slate-300 hover:border-indigo-500 bg-slate-50'

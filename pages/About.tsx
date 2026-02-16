@@ -35,13 +35,13 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                         } border`}
                 >
                     {/* Left Side: Content */}
-                    <div className="flex-1 p-8 md:p-12 lg:p-16">
-                        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-tight mb-8 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                    <div className="flex-1 p-6 md:p-12 lg:p-16">
+                        <h2 className={`text-2xl md:text-3xl lg:text-5xl font-black tracking-tighter leading-tight mb-6 md:mb-8 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                             Rescuing Relationships from the <br />
                             <span className="text-indigo-600">Limits of Human Memory.</span>
                         </h2>
 
-                        <div className={`space-y-6 font-medium leading-relaxed text-sm md:text-base ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+                        <div className={`space-y-4 md:space-y-6 font-medium leading-relaxed text-xs md:text-base ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
                             <p>
                                 Welcome to Memorable Contact. We believe that every handshake holds a world of potential, but we also know that human memory is imperfect. In the rush of a high-energy conference or the bustle of a milestone meeting, the most important details—the "where," the "why," and the "how"—often slip away.
                             </p>
@@ -65,18 +65,18 @@ const About: React.FC<AboutProps> = ({ theme, onBack }) => {
                     <div className={`w-full lg:w-[45%] relative overflow-hidden flex flex-col ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
                         <div className={`absolute inset-0 pointer-events-none ${theme === 'dark' ? 'bg-gradient-to-br from-indigo-950/50 to-slate-950' : 'bg-gradient-to-br from-indigo-100/50 to-white'}`} />
 
-                        <div className="relative flex-1 flex items-end justify-center pt-20">
+                        <div className="relative flex-1 flex items-end justify-center pt-12 md:pt-20">
                             <img
                                 src="https://res.cloudinary.com/dkpwmrjkq/image/upload/v1771256050/1675376788735-removebg-preview_alugko.png"
                                 alt="Amurtha - Founder & CEO"
-                                className="relative z-10 w-full max-w-[400px] object-contain drop-shadow-2xl"
+                                className="relative z-10 w-full max-w-[280px] md:max-w-[400px] object-contain drop-shadow-2xl translate-y-4"
                             />
                         </div>
 
-                        <div className={`p-8 md:p-12 backdrop-blur-md relative z-20 border-t ${theme === 'dark' ? 'bg-slate-900/80 border-slate-800' : 'bg-white/90 border-slate-100'}`}>
-                            <div className={`text-2xl font-black mb-1 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Amurtha</div>
-                            <div className="text-indigo-600 text-xs font-black uppercase tracking-widest mb-4">Founder & CEO</div>
-                            <div className={`text-[10px] font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>Asokumar Group of Companies</div>
+                        <div className={`p-6 md:p-12 backdrop-blur-md relative z-20 border-t ${theme === 'dark' ? 'bg-slate-900/80 border-slate-800' : 'bg-white/90 border-slate-100'}`}>
+                            <div className={`text-xl md:text-2xl font-black mb-1 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Amurtha</div>
+                            <div className="text-indigo-600 text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 md:mb-4">Founder & CEO</div>
+                            <div className={`text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>Asokumar Group of Companies</div>
                         </div>
                     </div>
                 </motion.div>
