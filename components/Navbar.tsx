@@ -26,22 +26,22 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
   ];
 
   return (
-    <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+    <nav className="fixed top-2 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[96%] max-w-7xl">
       <div className={`glass nav-glow px-4 md:px-10 py-3 md:py-6 rounded-[24px] md:rounded-[32px] flex items-center justify-between transition-all duration-500`}>
         <div className="flex items-center gap-3 md:gap-5 cursor-pointer group" onClick={() => { onNavigate('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }}>
           <div className="relative">
             <img
               src={logoUrl}
               alt="MemorableContact Logo"
-              className="w-10 h-10 md:w-14 md:h-14 rounded-[10px] md:rounded-[14px] object-cover shadow-lg ring-2 ring-indigo-500/10 group-hover:scale-105 transition-transform duration-500"
+              className="w-8 h-8 md:w-14 md:h-14 rounded-[8px] md:rounded-[14px] object-cover shadow-lg ring-2 ring-indigo-500/10 group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute -inset-1.5 bg-indigo-500/10 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className={`text-sm md:text-xl font-black tracking-tighter leading-none bg-gradient-to-r ${theme === 'dark' ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'} bg-clip-text text-transparent`}>
+            <span className={`text-xs md:text-xl font-black tracking-tighter leading-none bg-gradient-to-r ${theme === 'dark' ? 'from-white to-slate-400' : 'from-slate-900 to-slate-600'} bg-clip-text text-transparent`}>
               MemorableContact
             </span>
-            <span className="text-[6px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-indigo-500 mt-0.5">By Asokumar IT</span>
+            <span className="text-[5px] md:text-[8px] font-bold uppercase tracking-[0.3em] text-indigo-500 mt-0.5">By Asokumar IT</span>
           </div>
         </div>
 

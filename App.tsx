@@ -37,7 +37,7 @@ const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> =
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-indigo-500/10 blur-[60px] md:blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[800px] md:h-[800px] bg-indigo-500/10 blur-[40px] md:blur-[120px] rounded-full animate-pulse" />
       </div>
 
       <motion.div
@@ -195,15 +195,15 @@ const App: React.FC = () => {
         ) : view === 'pricing' ? (
           <PricingPage theme={theme} onBack={() => setView('home')} />
         ) : showDashboard ? (
-          <div className="pt-48 pb-24 px-6 flex items-center justify-center min-h-screen">
+          <div className="pt-24 md:pt-48 pb-12 md:pb-24 px-4 md:px-6 flex items-center justify-center min-h-[100dvh]">
             <div className="w-full">
-              <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center px-6">
-                <h2 className="text-3xl font-black tracking-tighter">Command Center</h2>
+              <div className="max-w-7xl mx-auto mb-6 md:mb-10 flex justify-between items-center px-4 md:px-6">
+                <h2 className="text-2xl md:text-3xl font-black tracking-tighter">Command Center</h2>
                 <button
                   onClick={() => setShowDashboard(false)}
-                  className="px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest bg-slate-800 text-white hover:bg-slate-700 shadow-xl transition-all"
+                  className="px-4 md:px-6 py-2 md:py-3 rounded-xl md:rounded-2xl text-[10px] md:text-xs font-black uppercase tracking-widest bg-slate-800 text-white hover:bg-slate-700 shadow-xl transition-all"
                 >
-                  Return to Surface
+                  Return
                 </button>
               </div>
               <Dashboard theme={theme} />

@@ -32,7 +32,7 @@ const Counter = ({ value, label, theme, suffix = "", decimals = 0 }: { value: nu
 
 const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
   return (
-    <section className="relative pt-32 md:pt-48 pb-20 md:pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden min-h-[90vh]">
+    <section className="relative pt-24 md:pt-48 pb-16 md:pb-32 px-4 md:px-6 flex flex-col items-center justify-center text-center overflow-hidden min-h-[90vh]">
       <div className="max-w-6xl z-20 flex flex-col items-center">
         <div className="relative group p-[1px] rounded-full overflow-hidden mb-8 md:mb-10 shadow-lg active:scale-95 transition-transform">
           <div className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
             className="relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)]"
           >
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
               Book a Call
               <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
             </div>
@@ -69,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
 
           <button className="relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95">
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#FBBC05_33%,#34A853_66%,#4285F4_100%)] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all backdrop-blur-xl ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all backdrop-blur-xl ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
               Watch Demo
               <Play className="w-4 h-4 md:w-6 md:h-6 fill-current" />
             </div>

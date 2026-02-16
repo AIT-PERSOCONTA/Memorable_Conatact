@@ -77,7 +77,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row h-screen lg:h-[850px] w-full max-w-7xl mx-auto overflow-hidden lg:rounded-[40px] border transition-all duration-500 ${theme === 'dark' ? 'bg-slate-950 border-slate-800 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.7)]' : 'bg-white border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)]'}`}>
+    <div className={`flex flex-col lg:flex-row h-screen lg:h-[850px] w-full max-w-7xl mx-auto overflow-hidden lg:rounded-[40px] border transition-all duration-500 ${theme === 'dark' ? 'bg-slate-950 border-slate-800 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.7)]' : 'bg-white border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)]'} min-h-[100dvh] lg:min-h-0`}>
 
       {/* Sidebar - Desktop */}
       <aside className={`hidden lg:flex w-80 flex-col border-r transition-colors duration-300 ${theme === 'dark' ? 'bg-slate-900 border-slate-800' : 'bg-slate-50 border-slate-200'}`}>
@@ -233,7 +233,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
         </header>
 
         {/* Dashboard Content */}
-        <div className="flex-1 overflow-y-auto p-6 lg:p-12 scrollbar-hide">
+        <div className="flex-1 overflow-y-auto p-4 md:p-12 scrollbar-hide">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 lg:mb-12 gap-6">
             <div className="text-left">
               <h1 className={`text-xl lg:text-4xl font-black mb-1 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{activeTab}</h1>
@@ -268,11 +268,11 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
                   <table className="w-full text-left border-collapse min-w-[700px]">
                     <thead>
                       <tr className={`border-b text-[8px] lg:text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 transition-colors duration-300 ${theme === 'dark' ? 'border-slate-800' : 'border-slate-100 bg-slate-50/80'}`}>
-                        <th className="px-4 lg:px-10 py-4 lg:py-6 text-left">Connection</th>
-                        <th className="px-4 lg:px-10 py-4 lg:py-6 text-left hidden sm:table-cell">Role</th>
-                        <th className="px-4 lg:px-10 py-4 lg:py-6 text-left hidden md:table-cell">Origin</th>
-                        <th className="px-4 lg:px-10 py-4 lg:py-6 text-left hidden lg:table-cell">Coordinates</th>
-                        <th className="px-4 lg:px-10 py-4 lg:py-6"></th>
+                        <th className="px-3 lg:px-10 py-3 lg:py-6 text-left">Connection</th>
+                        <th className="px-3 lg:px-10 py-3 lg:py-6 text-left hidden sm:table-cell">Role</th>
+                        <th className="px-3 lg:px-10 py-3 lg:py-6 text-left hidden md:table-cell">Origin</th>
+                        <th className="px-3 lg:px-10 py-3 lg:py-6 text-left hidden lg:table-cell">Coordinates</th>
+                        <th className="px-3 lg:px-10 py-3 lg:py-6"></th>
                       </tr>
                     </thead>
                     <motion.tbody
@@ -323,9 +323,9 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
                               <span className="text-[9px] font-bold text-slate-400 pl-6 uppercase tracking-widest">{contact.city}</span>
                             </div>
                           </td>
-                          <td className="px-4 lg:px-10 py-4 lg:py-6 text-right">
-                            <button className="p-2 lg:opacity-0 group-hover:opacity-100 transition-opacity rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500">
-                              <MoreHorizontal className="w-5 h-5" />
+                          <td className="px-3 lg:px-10 py-3 lg:py-6 text-right">
+                            <button className="p-1.5 lg:opacity-0 group-hover:opacity-100 transition-opacity rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500">
+                              <MoreHorizontal className="w-4 h-4 md:w-5 md:h-5" />
                             </button>
                           </td>
                         </motion.tr>

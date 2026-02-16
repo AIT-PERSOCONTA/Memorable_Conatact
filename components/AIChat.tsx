@@ -177,7 +177,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
     };
 
     return (
-        <div className={`flex flex-col h-[500px] md:h-[600px] lg:h-[700px] rounded-[24px] md:rounded-[32px] overflow-hidden border ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'}`}>
+        <div className={`flex flex-col h-[70dvh] md:h-[600px] lg:h-[700px] rounded-[24px] md:rounded-[32px] overflow-hidden border ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white border-slate-200 shadow-sm'}`}>
             {/* Chat Header */}
             <div className={`p-6 border-b flex items-center justify-between ${theme === 'dark' ? 'bg-slate-900 border-slate-800' : 'bg-orange-50/50 border-orange-100'}`}>
                 <div className="flex items-center gap-2 md:gap-4">
@@ -216,7 +216,7 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                                     {msg.role === 'user' ? <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" /> : <Bot className="w-3.5 h-3.5 md:w-4 md:h-4 text-orange-500" />}
                                 </div>
                                 <div className="space-y-3">
-                                    <div className={`px-4 py-3 rounded-[18px] text-[12px] md:text-sm leading-relaxed shadow-sm ${msg.role === 'user'
+                                    <div className={`px-3 md:px-4 py-2.5 md:py-3 rounded-[16px] md:rounded-[18px] text-[11px] md:text-sm leading-relaxed shadow-sm ${msg.role === 'user'
                                         ? 'bg-orange-600 text-white rounded-tr-none'
                                         : (theme === 'dark' ? 'bg-slate-800 text-slate-200 rounded-tl-none' : 'bg-white text-slate-700 rounded-tl-none border border-orange-50')
                                         }`}>
@@ -241,20 +241,20 @@ const AIChat: React.FC<AIChatProps> = ({ theme, onContactSaved }) => {
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <div className="text-xs font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
+                                                <div className="text-[11px] font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
                                                     <span className="text-orange-500 text-sm">📍</span> {msg.data.location}
                                                 </div>
                                                 {msg.data.phone && (
-                                                    <div className="text-xs font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
+                                                    <div className="text-[11px] font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
                                                         <span className="text-orange-500 text-sm">📞</span> {msg.data.phone}
                                                     </div>
                                                 )}
                                                 {msg.data.email && (
-                                                    <div className="text-xs font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
+                                                    <div className="text-[11px] font-bold text-slate-500 bg-orange-500/5 p-2 rounded-lg flex items-center gap-2">
                                                         <span className="text-orange-500 text-sm">📧</span> {msg.data.email}
                                                     </div>
                                                 )}
-                                                <div className="text-xs italic text-slate-600 bg-slate-50 p-2 rounded-lg">
+                                                <div className="text-[11px] italic text-slate-600 bg-slate-50 p-2 rounded-lg">
                                                     "{msg.data.context}"
                                                 </div>
                                             </div>
