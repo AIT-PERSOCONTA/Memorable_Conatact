@@ -1,0 +1,7 @@
+{
+  "name": "MemorableContact - AI Personal Memory Assistant",
+  "description": "A high-end, dark-themed landing page and interactive demo for MemorableContact, an AI memory assistant that helps you capture and recall professional connections effortlessly using Gemini AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
