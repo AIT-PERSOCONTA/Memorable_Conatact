@@ -234,35 +234,37 @@ const App: React.FC = () => {
 
             <Partners theme={theme} />
 
-            <div id="features" className="py-24 px-6 lg:px-12">
+            <div id="features" className="py-10 px-5 md:py-24 md:px-6 lg:px-12">
               <Features theme={theme} />
             </div>
 
-            <div id="how-it-works">
+            <div id="how-it-works" className="py-10 md:py-32">
               <MockupDemo theme={theme} />
             </div>
 
-            <div id="flow">
+            <div id="flow" className="py-10 md:py-24">
               <ExperienceFlow theme={theme} />
             </div>
 
-            <div id="video-demo">
+            <div id="video-demo" className="py-10 md:py-24">
               <DemoVideo theme={theme} />
             </div>
 
-            <Testimonials theme={theme} />
+            <div className="py-10 md:py-32">
+              <Testimonials theme={theme} />
+            </div>
 
-            <div id="recall">
+            <div id="recall" className="py-10 md:py-24">
               <FuzzyRecall theme={theme} />
             </div>
 
-            <div id="pricing">
+            <div id="pricing" className="py-10 md:py-24">
               <Pricing theme={theme} />
             </div>
 
-            <div id="playground" className="py-24 md:py-32 px-6 lg:px-12 relative overflow-hidden">
-              <div className="max-w-7xl mx-auto text-center mb-16 md:mb-20">
-                <h2 className="text-fluid-h2 font-black mb-8 tracking-tighter leading-none">Live Demo <span className="text-indigo-500">Playground</span></h2>
+            <div id="playground" className="py-10 md:py-32 px-5 md:px-6 lg:px-12 relative overflow-hidden">
+              <div className="max-w-7xl mx-auto text-center mb-16 md:mb-20 px-5">
+                <h2 className="text-fluid-h2 font-black mb-8 tracking-tighter leading-none text-center">Live Demo <span className="text-indigo-500">Playground</span></h2>
                 <p className="max-w-2xl mx-auto text-slate-500 font-bold text-base md:text-lg leading-relaxed">Your connections deserve more than a contact card. They deserve a persistent cognitive node in MemorableContact.</p>
               </div>
               <div className="opacity-80 hover:opacity-100 transition-opacity duration-700 pointer-events-none lg:pointer-events-auto">

@@ -44,18 +44,18 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
           </div>
         </div>
 
-        <h1 className="text-fluid-h1 font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-10">
+        <h1 className="text-fluid-h1 font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-10 text-center">
           <span className="gradient-text">Never Forget A Professional</span>
           <br />
           <span className="gradient-text">Connection Again.</span>
         </h1>
 
-        <p className={`text-base md:text-lg max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium transition-colors duration-300 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+        <p className={`text-base md:text-lg max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium transition-colors duration-300 text-center ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
           MemorableContact is the Gen AI Powered Application for your professional network. <br className="hidden md:block" />
           Capture context via Chatbot, search via semantic intent, and recall every detail instantly.
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8 px-4 md:px-0">
+        <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8 px-5 md:px-0">
           <button
             onClick={onGetStarted}
             className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[56px] md:min-h-[64px]"

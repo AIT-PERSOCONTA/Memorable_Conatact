@@ -103,7 +103,7 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
               rotateY: 2,
               transition: { duration: 0.3 }
             }}
-            className={`relative glass p-8 md:p-10 rounded-[32px] md:rounded-[40px] transition-all group border flex flex-col items-start text-left ${theme === 'dark'
+            className={`relative glass p-8 md:p-10 rounded-[32px] md:rounded-[40px] transition-all group border flex flex-col items-center text-center md:items-start md:text-left ${theme === 'dark'
               ? 'border-slate-800 hover:bg-white/5 hover:border-indigo-500/50 shadow-2xl shadow-indigo-500/5'
               : 'border-slate-200 bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-10px_rgba(79,70,229,0.15)] hover:border-indigo-400'
               }`}
