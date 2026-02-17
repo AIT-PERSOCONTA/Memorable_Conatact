@@ -33,7 +33,7 @@ const Counter = ({ value, label, theme, suffix = "", decimals = 0 }: { value: nu
 const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
   return (
     <section className="relative pt-20 pb-16 px-0 flex flex-col items-center justify-center text-center overflow-hidden min-h-[90vh] md:pt-48 md:pb-32 md:px-6">
-      <div className="responsive-container z-20 flex flex-col items-center">
+      <div className="responsive-container z-20 flex flex-col items-center flex-mobile-center">
         <div className="relative group p-[1px] rounded-full overflow-hidden mb-8 md:mb-10 shadow-lg active:scale-95 transition-transform">
           <div className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
           <div className={`relative px-4 py-1.5 rounded-full flex items-center gap-2 ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
         <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8 px-5 md:px-0">
           <button
             onClick={onGetStarted}
-            className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[56px] md:min-h-[64px]"
+            className="w-full md:w-auto flex-mobile-center relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[56px] md:min-h-[64px] transform-none"
           >
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
             <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all min-h-[52px] md:min-h-[60px] ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
             </div>
           </button>
 
-          <button className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 min-h-[56px] md:min-h-[64px]">
+          <button className="w-full md:w-auto flex-mobile-center relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 min-h-[56px] md:min-h-[64px] transform-none">
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#FBBC05_33%,#34A853_66%,#4285F4_100%)] opacity-50 group-hover:opacity-100 transition-opacity" />
             <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all backdrop-blur-xl min-h-[52px] md:min-h-[60px] ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
               Watch Demo

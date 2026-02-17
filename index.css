@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box !important;
+}
+
 :root {
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.05);
@@ -16,11 +20,11 @@
 
 html,
 body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow-x: hidden !important;
-    position: relative;
+    position: relative !important;
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--body-bg);
     color: var(--body-text);
@@ -121,4 +125,65 @@ button,
 .touch-target {
     min-height: 3rem;
     /* 48px */
+}
+
+/* --- THE MOBILE SPECIFICITY HAMMER --- */
+@media (max-width: 768px) {
+
+    #hero,
+    #features,
+    #how-it-works,
+    #flow,
+    #video-demo,
+    #recall,
+    #pricing,
+    #playground,
+    section,
+    main,
+    div[id],
+    [class*="wrapper"] {
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 1rem !important;
+        /* 16px */
+        padding-right: 1rem !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    button,
+    .btn,
+    .relative.group.p-\[2px\],
+    a.relative.group {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: none !important;
+        display: block !important;
+    }
+
+    .flex-mobile-center {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .responsive-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Fix for any absolutely positioned elements that bleed out */
+    [class*="absolute"],
+    [style*="absolute"] {
+        max-width: 100vw !important;
+    }
 }
