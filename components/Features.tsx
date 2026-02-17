@@ -78,7 +78,7 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
         >
           <Sparkles className="w-3 h-3" /> Core Engine
         </motion.div>
-        <h2 className={`text-3xl md:text-6xl font-black mb-6 tracking-tight leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+        <h2 className={`text-fluid-h2 font-black mb-6 tracking-tight leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
           Powerful Core <span className="gradient-text">Capabilities.</span>
         </h2>
         <p className={`max-w-2xl mx-auto font-medium text-base md:text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>

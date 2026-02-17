@@ -41,7 +41,7 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-5xl md:text-6xl font-black mb-8 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+            <h2 className={`text-fluid-h2 font-black mb-8 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
               Intelligence in <span className="gradient-text">Real-Time</span>
             </h2>
             <p className={`text-xl mb-12 max-w-lg font-medium transition-colors duration-300 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -61,8 +61,8 @@ const MockupDemo: React.FC<MockupDemoProps> = ({ theme }) => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className={`flex items-start gap-4 p-5 rounded-3xl border transition-all ${theme === 'dark'
-                      ? 'border-slate-800/50 bg-slate-900/40 hover:border-indigo-500/30'
-                      : 'border-slate-200/50 bg-white shadow-sm hover:border-indigo-400'
+                    ? 'border-slate-800/50 bg-slate-900/40 hover:border-indigo-500/30'
+                    : 'border-slate-200/50 bg-white shadow-sm hover:border-indigo-400'
                     }`}
                 >
                   <div className="p-3 rounded-2xl bg-indigo-600/10 text-indigo-500">{item.icon}</div>

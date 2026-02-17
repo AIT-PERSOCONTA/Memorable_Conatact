@@ -14,12 +14,16 @@
     --body-text: #f8fafc;
 }
 
+html,
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100%;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--body-bg);
     color: var(--body-text);
-    overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -70,15 +74,15 @@ body {
 
 /* Mobile-First Container */
 .responsive-container {
-    width: 90%;
+    width: 94%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .responsive-container {
-        width: 100%;
+        width: 90%;
     }
 }
 

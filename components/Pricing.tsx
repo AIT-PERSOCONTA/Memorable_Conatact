@@ -60,7 +60,7 @@ const Pricing: React.FC<PricingProps> = ({ theme }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-3xl md:text-5xl font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+            className={`text-fluid-h2 font-black mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
           >
             Invest in Your <span className="gradient-text">Network</span>
           </motion.h2>

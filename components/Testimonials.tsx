@@ -50,7 +50,7 @@ const Testimonials: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={`text-6xl lg:text-7xl font-black mb-8 tracking-tighter leading-[1.1] ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}
+            className={`text-4xl md:text-6xl lg:text-7xl font-black mb-8 tracking-tighter leading-[1.1] ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}
           >
             What Our <br />
             <span className="text-slate-500">Customers Say</span>

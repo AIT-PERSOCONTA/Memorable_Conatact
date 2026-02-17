@@ -19,6 +19,13 @@ import ExperienceFlow from './components/ExperienceFlow';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Zap } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag: (command: string, ...args: any[]) => void;
+    dataLayer: any[];
+  }
+}
+
 const SplashScreen: React.FC<{ onEnter: () => void, theme: 'light' | 'dark' }> = ({ onEnter, theme }) => {
   const logoUrl = "https://res.cloudinary.com/dkpwmrjkq/image/upload/v1771251254/cd0f3692-7e39-46e1-8c0f-60b0eee21b3f_b6krz5.jpg";
 
@@ -129,6 +136,16 @@ const App: React.FC = () => {
     }
     localStorage.setItem('memorable-contact-theme', theme);
   }, [theme]);
+
+  // Google Analytics Page View Tracking
+  useEffect(() => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('config', 'G-VGJLRXF9R9', {
+        page_path: view === 'home' ? '/' : `/${view}`,
+        page_title: view.charAt(0).toUpperCase() + view.slice(1)
+      });
+    }
+  }, [view]);
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
@@ -243,10 +260,10 @@ const App: React.FC = () => {
               <Pricing theme={theme} />
             </div>
 
-            <div id="playground" className="py-32 px-6 lg:px-12 relative overflow-hidden">
-              <div className="max-w-7xl mx-auto text-center mb-20">
-                <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none">Live Demo <span className="text-indigo-500">Playground</span></h2>
-                <p className="max-w-2xl mx-auto text-slate-500 font-bold text-lg leading-relaxed">Your connections deserve more than a contact card. They deserve a persistent cognitive node in MemorableContact.</p>
+            <div id="playground" className="py-24 md:py-32 px-6 lg:px-12 relative overflow-hidden">
+              <div className="max-w-7xl mx-auto text-center mb-16 md:mb-20">
+                <h2 className="text-fluid-h2 font-black mb-8 tracking-tighter leading-none">Live Demo <span className="text-indigo-500">Playground</span></h2>
+                <p className="max-w-2xl mx-auto text-slate-500 font-bold text-base md:text-lg leading-relaxed">Your connections deserve more than a contact card. They deserve a persistent cognitive node in MemorableContact.</p>
               </div>
               <div className="opacity-80 hover:opacity-100 transition-opacity duration-700 pointer-events-none lg:pointer-events-auto">
                 <Dashboard theme={theme} />

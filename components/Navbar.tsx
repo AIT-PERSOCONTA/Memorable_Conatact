@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
           </div>
         </div>
 
-        <div className="hidden xl:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -74,13 +74,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
             {theme === 'dark' ? <Sun className="w-5 h-5 md:w-5 md:h-5" /> : <Moon className="w-5 h-5 md:w-5 md:h-5" />}
           </button>
 
-          <button onClick={onDashboardToggle} className="hidden md:flex px-6 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl md:rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-indigo-600/20 active:scale-95 border border-white/10 min-h-[48px]">
+          <button onClick={onDashboardToggle} className="hidden lg:flex px-6 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl md:rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-indigo-600/20 active:scale-95 border border-white/10 min-h-[48px]">
             Book a Call
           </button>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`xl:hidden p-3 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
+            className={`md:hidden p-3 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${theme === 'dark' ? 'hover:bg-slate-800 text-slate-400' : 'hover:bg-slate-200 text-slate-600'}`}
           >
             {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, theme, toggleTheme, onDa
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`xl:hidden absolute top-full left-0 right-0 mt-4 glass nav-glow p-6 rounded-[24px] flex flex-col gap-4 border overflow-hidden ${theme === 'dark' ? 'border-slate-800 bg-slate-900/90' : 'border-slate-200 bg-white/90'}`}
+            className={`md:hidden absolute top-full left-0 right-0 mt-4 glass nav-glow p-6 rounded-[24px] flex flex-col gap-4 border overflow-hidden ${theme === 'dark' ? 'border-slate-800 bg-slate-900/90' : 'border-slate-200 bg-white/90'}`}
           >
             {navLinks.map((link) => (
               <button

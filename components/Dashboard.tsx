@@ -298,19 +298,19 @@ const Dashboard: React.FC<DashboardProps> = ({ theme }) => {
                                 )}
                               </div>
                               <div className="flex flex-col text-left overflow-hidden">
-                                <span className={`text-[10px] lg:text-sm font-black truncate max-w-[120px] md:max-w-none ${theme === 'dark' ? 'text-slate-200' : 'text-slate-900'}`}>{contact.name}</span>
-                                <span className="text-[7px] md:text-[8px] font-bold text-slate-500 truncate">{contact.phone}</span>
+                                <span className={`text-[10px] lg:text-sm font-black break-words max-w-[120px] md:max-w-none ${theme === 'dark' ? 'text-slate-200' : 'text-slate-900'}`}>{contact.name}</span>
+                                <span className="text-[7px] md:text-[8px] font-bold text-slate-500 break-words">{contact.phone}</span>
                               </div>
                             </div>
                           </td>
                           <td className="px-4 lg:px-10 py-4 lg:py-6 hidden sm:table-cell">
                             <div className="flex flex-col text-left">
-                              <span className={`text-[10px] lg:text-sm font-black ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{contact.title}</span>
-                              <span className="text-[8px] lg:text-[10px] font-bold text-slate-500 uppercase tracking-widest whitespace-nowrap">at {contact.company}</span>
+                              <span className={`text-[10px] lg:text-sm font-black break-words ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{contact.title}</span>
+                              <span className="text-[8px] lg:text-[10px] font-bold text-slate-500 uppercase tracking-widest break-words">at {contact.company}</span>
                             </div>
                           </td>
                           <td className="px-4 lg:px-10 py-4 lg:py-6 hidden md:table-cell">
-                            <span className={`px-2 lg:px-4 py-1 rounded-lg lg:rounded-xl text-[8px] lg:text-[10px] font-black uppercase tracking-widest whitespace-nowrap ${theme === 'dark' ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'}`}>
+                            <span className={`px-2 lg:px-4 py-1 rounded-lg lg:rounded-xl text-[8px] lg:text-[10px] font-black uppercase tracking-widest break-words ${theme === 'dark' ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'}`}>
                               {contact.event}
                             </span>
                           </td>

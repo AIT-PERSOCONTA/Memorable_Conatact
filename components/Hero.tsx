@@ -44,39 +44,39 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
           </div>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-10">
+        <h1 className="text-fluid-h1 font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-10">
           <span className="gradient-text">Never Forget A Professional</span>
           <br />
           <span className="gradient-text">Connection Again.</span>
         </h1>
 
-        <p className={`text-sm md:text-lg max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium transition-colors duration-300 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+        <p className={`text-base md:text-lg max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium transition-colors duration-300 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
           MemorableContact is the Gen AI Powered Application for your professional network. <br className="hidden md:block" />
           Capture context via Chatbot, search via semantic intent, and recall every detail instantly.
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8">
+        <div className="flex flex-col items-center justify-center gap-4 w-full md:flex-row md:gap-8 px-4 md:px-0">
           <button
             onClick={onGetStarted}
-            className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[48px]"
+            className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 shadow-[0_20px_50px_rgba(79,70,229,0.3)] min-h-[56px] md:min-h-[64px]"
           >
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#EA4335_25%,#FBBC05_50%,#34A853_75%,#4285F4_100%)]" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all min-h-[48px] ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all min-h-[52px] md:min-h-[60px] ${theme === 'dark' ? 'bg-slate-950 text-white' : 'bg-white text-slate-900 border border-slate-100'}`}>
               Book a Call
-              <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-indigo-500 group-hover:rotate-12 transition-transform" />
             </div>
           </button>
 
-          <button className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 min-h-[48px]">
+          <button className="w-full md:w-auto relative group p-[2px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden transition-all active:scale-95 min-h-[56px] md:min-h-[64px]">
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4285F4_0%,#FBBC05_33%,#34A853_66%,#4285F4_100%)] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-3.5 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-sm md:text-xl transition-all backdrop-blur-xl min-h-[48px] ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
+            <div className={`relative flex items-center justify-center gap-3 px-6 md:px-10 py-4 md:py-5 rounded-[calc(1.5rem-2px)] md:rounded-[calc(2rem-2px)] font-black text-base md:text-xl transition-all backdrop-blur-xl min-h-[52px] md:min-h-[60px] ${theme === 'dark' ? 'bg-slate-900/90 text-slate-200' : 'bg-white/90 text-slate-700'}`}>
               Watch Demo
-              <Play className="w-4 h-4 md:w-6 md:h-6 fill-current" />
+              <Play className="w-5 h-5 md:w-6 md:h-6 fill-current" />
             </div>
           </button>
         </div>
 
-        <div className={`mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t pt-12 md:pt-16 transition-colors duration-300 ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
+        <div className={`mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 border-t pt-12 md:pt-16 transition-colors duration-300 w-full ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
           <Counter value={100} label="Context Retention" theme={theme} suffix="%" />
           <Counter value={2.5} label="Recall Speed" theme={theme} suffix="s" decimals={1} />
           <div className="col-span-2 md:col-span-1 border-t md:border-t-0 pt-8 md:pt-0">
@@ -85,8 +85,8 @@ const Hero: React.FC<HeroProps> = ({ theme, onGetStarted }) => {
         </div>
       </div>
 
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blur-[160px] rounded-full -z-10 transition-colors duration-300 ${theme === 'dark' ? 'bg-indigo-600/10' : 'bg-indigo-500/5'}`} />
-      <div className={`absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] blur-[140px] rounded-full -z-10 transition-colors duration-300 ${theme === 'dark' ? 'bg-purple-600/10' : 'bg-purple-500/5'}`} />
+      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[800px] md:h-[800px] blur-[100px] md:blur-[160px] rounded-full -z-10 transition-colors duration-300 ${theme === 'dark' ? 'bg-indigo-600/10' : 'bg-indigo-500/5'}`} />
+      <div className={`absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] md:w-[600px] md:h-[600px] blur-[80px] md:blur-[140px] rounded-full -z-10 transition-colors duration-300 ${theme === 'dark' ? 'bg-purple-600/10' : 'bg-purple-500/5'}`} />
     </section>
   );
 };

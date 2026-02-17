@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { MapPin, Briefcase, Calendar, Sparkles, Brain, ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Briefcase, Calendar, Sparkles, Brain, ArrowRight } from 'lucide-react';
 
 interface FuzzyRecallProps {
   theme: 'light' | 'dark';
@@ -18,12 +18,12 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
   const leftOpacity = useTransform(scrollYProgress, [0.1, 0.4], [1, 0]);
   const leftBlur = useTransform(scrollYProgress, [0.1, 0.4], ["blur(0px)", "blur(20px)"]);
   const leftScale = useTransform(scrollYProgress, [0.1, 0.4], [1, 0.9]);
-  
+
   const rightOpacity = useTransform(scrollYProgress, [0.45, 0.75], [0, 1]);
   const rightX = useTransform(scrollYProgress, [0.45, 0.75], [100, 0]);
   const rightScale = useTransform(scrollYProgress, [0.45, 0.75], [0.8, 1]);
   const rightRotate = useTransform(scrollYProgress, [0.45, 0.75], [5, 0]);
-  
+
   const centerIconOpacity = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
   const centerIconScale = useTransform(scrollYProgress, [0.35, 0.55], [0.5, 1]);
 
@@ -41,9 +41,9 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
   return (
     <section ref={sectionRef} className="relative min-h-[300vh] z-20">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        
+
         {/* Transformation Indicator */}
-        <motion.div 
+        <motion.div
           style={{ opacity: centerIconOpacity, scale: centerIconScale }}
           className="absolute z-30 pointer-events-none"
         >
@@ -58,9 +58,9 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
         </motion.div>
 
         <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-6">
-          
+
           {/* Left Side: Chaos */}
-          <motion.div 
+          <motion.div
             style={{ opacity: leftOpacity, scale: leftScale, filter: leftBlur }}
             className="relative w-full lg:w-[45%] h-[500px]"
           >
@@ -72,28 +72,28 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
                 The mental fog where 70% of professional context is lost within 48 hours.
               </p>
             </div>
-            
+
             <div className="relative h-full w-full">
               {fragments.map((f, i) => (
                 <motion.div
                   key={i}
-                  animate={{ 
+                  animate={{
                     y: [0, -15, 0],
                     x: [0, 10, 0],
-                    opacity: [0.3, 0.5, 0.3] 
+                    opacity: [0.3, 0.5, 0.3]
                   }}
-                  transition={{ 
-                    duration: 4 + Math.random() * 2, 
+                  transition={{
+                    duration: 4 + Math.random() * 2,
                     repeat: Infinity,
-                    delay: f.delay 
+                    delay: f.delay
                   }}
-                  className={`absolute font-bold select-none whitespace-nowrap blur-[1px] ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}
-                  style={{ top: f.top, left: f.left, fontSize: `${1.2 + Math.random()}rem` }}
+                  className={`absolute font-bold select-none whitespace-normal break-words max-w-[150px] blur-[1px] ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}
+                  style={{ top: f.top, left: f.left, fontSize: `clamp(0.8rem, 2vw, 1.5rem)` }}
                 >
                   {f.text}
                 </motion.div>
               ))}
-              
+
               {/* Chaotic Background Swirls */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-slate-500/5 to-transparent blur-3xl rounded-full" />
             </div>
@@ -106,11 +106,11 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
           </div>
 
           {/* Right Side: Clarity */}
-          <motion.div 
-            style={{ 
-              opacity: rightOpacity, 
-              x: rightX, 
-              scale: rightScale, 
+          <motion.div
+            style={{
+              opacity: rightOpacity,
+              x: rightX,
+              scale: rightScale,
               rotate: rightRotate
             }}
             className={`relative w-full lg:w-[45%] glass p-1 rounded-[48px] overflow-hidden group transition-all duration-500 ${theme === 'dark' ? 'bg-slate-900/40 border-indigo-500/20 shadow-[0_0_80px_-20px_rgba(79,70,229,0.3)]' : 'bg-white border-indigo-100 shadow-2xl shadow-indigo-200/50'}`}
@@ -171,7 +171,7 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
                 </div>
               </div>
             </div>
-            
+
             {/* Animated Glow Border */}
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
           </motion.div>
@@ -193,7 +193,7 @@ const FuzzyRecall: React.FC<FuzzyRecallProps> = ({ theme }) => {
             Fragments into <span className="gradient-text">Facts.</span>
           </h2>
           <p className={`text-xl md:text-2xl font-medium leading-relaxed transition-colors duration-300 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-            Stop letting your network evaporate. MemorableContact's AI listens to the way you naturally describe your world, 
+            Stop letting your network evaporate. MemorableContact's AI listens to the way you naturally describe your world,
             anchoring every person, place, and idea into your persistent digital core.
           </p>
         </div>
