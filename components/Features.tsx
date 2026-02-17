@@ -79,7 +79,7 @@ const Features: React.FC<FeaturesProps> = ({ theme }) => {
           <Sparkles className="w-3 h-3" /> Core Engine
         </motion.div>
         <h2 className={`text-fluid-h2 font-black mb-6 tracking-tight leading-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-          Powerful Core <span className="gradient-text">Capabilities.</span>
+          Revolutionizing Memory with <span className="gradient-text">AIT & AES Technology.</span>
         </h2>
         <p className={`max-w-2xl mx-auto font-medium text-base md:text-lg ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
           Designed for networkers, sales pros, and leaders who value every connection.

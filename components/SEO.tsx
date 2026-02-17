@@ -11,12 +11,12 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({
     title,
-    description = "MemorableContact is the Gen AI Powered Application for your professional network. Never forget a connection again.",
+    description = "Memorable Contact (AES) by Asokumar IT (AIT). The world's first Gen AI professional memory assistant. Capture context, recall details, and optimize your networking.",
     canonical = "https://memorablecontact.com",
     ogImage = "https://memorablecontact.com/og-image.jpg",
     ogType = "website"
 }) => {
-    const siteTitle = "Memorable Contact";
+    const siteTitle = "Asokumar IT (AIT) | Memorable Contact (AES)";
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
     return (
@@ -25,6 +25,7 @@ const SEO: React.FC<SEOProps> = ({
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={canonical} />
+            <meta name="keywords" content="Asokumar IT, AIT, Memorable Contact, AES, AI Contact Manager, Professional Memory, Networking Assistant" />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />
@@ -44,10 +45,12 @@ const SEO: React.FC<SEOProps> = ({
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "Organization",
-                    "name": "Memorable Contact",
+                    "name": "Asokumar IT (AIT)",
+                    "legalName": "Asokumar IT",
+                    "alternateName": ["AIT", "Memorable Contact", "AES", "Asokumar Engineering Services"],
                     "url": "https://memorablecontact.com",
                     "logo": "https://memorablecontact.com/logo.png",
-                    "description": description
+                    "description": "Memorable Contact (AES) is a premier AI-powered cognitive assistant developed by Asokumar IT (AIT) to revolutionize professional relationship management."
                 })}
             </script>
         </Helmet>
